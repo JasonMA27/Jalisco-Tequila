@@ -1,6 +1,6 @@
 
 :root {
-  --bg: #2c2c2c; /* charcoal for body */
+  --bg: #FFD34E; /* charcoal for body */
   --primary: #000000; /* black */
   --text: #F9F6EE; /* bone white */
   --accent-brown: #8B5A2B;
@@ -8,7 +8,6 @@
   --accent-gold: #FFD34E;
   --accent-red: #D62828;
 }
-
 
 body{
   background-color: var(--bg);
@@ -39,21 +38,28 @@ section{
 header{
   background-color: var(--primary);
   color: var(--text);
-  padding: 40px 20px;
-  text-align: center;
+  padding: 10px 0;
+  width: 100%;
 }
 
 .navbar{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: var(--primary);
+  padding: 0 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-center{
+  flex: 0 1 200px;
+  text-align: center;
+  display: flex;
 }
 
 .nav-left, .nav-right{
   display: flex;
-  gap: 30px;
+  gap: 50px;
 }
 
 nav a{
@@ -79,7 +85,70 @@ nav a{
 }
 
 .logo{
+  width: 150px;
+  height: auto;
+}
+
+#capture{
+  height: 100vh;
+  background: url('capture.jpeg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#capture .hero-content h1{
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+#capture .hero-content p{
+  color: white;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+#capture button{
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #FFD34E;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#capture button:hover{
+  background: #006B5B;
+  color: white;
+}
+
+footer{
+  background-color: var(--primary);
   color: var(--text);
-  font-family: "Montserrat", sens-serif;
-  font-size: 1.8rem;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-right a{
+  color: var(--text);
+  margin: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover{
+  color: var(--accent-gold);
 }
