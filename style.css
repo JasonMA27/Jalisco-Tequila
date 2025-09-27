@@ -30,7 +30,7 @@ p{
 }
 
 section{
-  padding: 60px 20px;
+  padding: 100px 20px;
   text-align: center;
   border-bottom: 1px solid var(--accent-brown);
 }
@@ -47,7 +47,7 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@ header{
 
 .nav-left, .nav-right{
   display: flex;
-  gap: 50px;
+  gap: 70px;
 }
 
 nav a{
@@ -87,6 +87,7 @@ nav a{
 .logo{
   width: 150px;
   height: auto;
+  cursor: pointer;
 }
 
 #capture{
@@ -132,16 +133,13 @@ nav a{
 footer{
   background-color: var(--primary);
   color: var(--text);
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 20px;
+  padding: 20px 40px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+  min-height: 80px;
+  box-sizing: border-box;
 }
 .footer-right a{
   color: var(--text);
@@ -151,4 +149,36 @@ footer{
 
 .footer-right a:hover{
   color: var(--accent-gold);
+}
+
+#menu{
+  background: white;
+  color:#000000;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#menu h2{
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.menu-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--accent-brown);
+}
+
+.item-name{
+  font-weight: 600;
+  color: black;
+}
+
+.item-price{
+  color: var(--accent-brown);
+  font-weight: bold;
 }
