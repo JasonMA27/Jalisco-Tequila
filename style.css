@@ -30,9 +30,17 @@ p{
 }
 
 section{
-  padding: 100px 20px;
-  text-align: center;
+  padding: 5px 100px;
   border-bottom: 1px solid var(--accent-brown);
+}
+
+section h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#about p{
+  text-align:center;
 }
 
 header{
@@ -130,6 +138,41 @@ nav a{
   color: white;
 }
 
+.gallery-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0;
+  position: relative;
+}
+
+.gallery-item img{
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-text{
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 250px;
+}
+
+.gallery-item.left .gallery-text{
+  right: -40px;
+}
+
+.gallery-item.right{
+  flex-direction: row-reverse;
+}
+
+.gallery-item.right .gallery-text{
+  left: -40px;
+}
+
 footer{
   background-color: var(--primary);
   color: var(--text);
@@ -182,3 +225,24 @@ footer{
   color: var(--accent-brown);
   font-weight: bold;
 }
+
+@media (max-width: 768px){
+
+  .gallery-item{
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .gallery-text{
+    position: static;
+    margin-top: 15px;
+    max-width: 90%;
+  }
+
+  .gallery-item img{
+    max-width: 90%;
+  }
+}
+
+
+/* plug in animations */
