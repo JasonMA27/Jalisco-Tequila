@@ -1,26 +1,29 @@
 
 :root {
-  --bg: #FFD34E; /* charcoal for body */
-  --primary: #000000; /* black */
-  --text: #F9F6EE; /* bone white */
+  --bg: #FFD34E;
+  --primary: #000000;
+  --text: #F9F6EE;
   --accent-brown: #8B5A2B;
   --accent-green: #006B5B;
   --accent-gold: #FFD34E;
   --accent-red: #D62828;
+  --header-offset: 72px;
+}
+
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-offset);
+  margin: 0;
+  padding: 0;
 }
 
 body{
   background-color: var(--bg);
-}
-
-h1{
-    color: var(--text);
-    font-family: "Montserrat", sans-serif;
-}
-
-p{
-    color: var(--text);
-    font-family: "Montserrat", sans-serif;
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 .container{
@@ -32,6 +35,7 @@ p{
 section{
   padding: 5px 100px;
   border-bottom: 1px solid var(--accent-brown);
+  scroll-margin-top: var(--header-offset);
 }
 
 section h2{
@@ -47,10 +51,11 @@ header{
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--primary);
-  color: var(--text);
-  padding: 10px 0;
+  background-color: #ffffff;
+  color: var(--primary);
+  padding: 4px 0;
   width: 100%;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .12);
 }
 
 .navbar{
@@ -58,8 +63,8 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-center{
@@ -70,46 +75,60 @@ header{
 
 .nav-left, .nav-right{
   display: flex;
-  gap: 70px;
+  gap: 90px;
 }
 
 nav a{
-  color:var(--text);
+  color: var(--primary);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
   position: relative;
+  transition: color 0.3s ease;
+  display: inline-block;
+  padding: 8px 0;
+  line-height: 1.2;
+}
+
+.navbar i{
+  color: var(--primary);
 }
 
 .navbar a::after{
-  margin:auto;
   background: var(--accent-gold);
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
   transition: width 0.3s;
+  margin: auto;
 }
 
 .navbar a:hover::after{
   width: 100%;
 }
 
+nav a:hover{
+  color: var(--accent-gold);
+}
+
 .logo{
-  width: 150px;
+  width: 90px;
   height: auto;
   cursor: pointer;
 }
 
 #capture{
   height: 100vh;
+  width: 100%;
   background: url('capture.jpeg') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 #capture .hero-content h1{
@@ -141,6 +160,23 @@ nav a{
   color: white;
 }
 
+.cta-btn{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: var(--accent-gold);
+  color: var(--primary);
+  border-radius: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-btn:hover{
+  background: var(--accent-green);
+  color: var(--text);
+}
+
 .gallery-item{
   display: flex;
   align-items: center;
@@ -165,7 +201,7 @@ nav a{
 }
 
 .gallery-item.left .gallery-text{
-  right: -40px;
+  right: -24px;
 }
 
 .gallery-item.right{
@@ -173,7 +209,13 @@ nav a{
 }
 
 .gallery-item.right .gallery-text{
-  left: -40px;
+  left: -24px;
+}
+
+@media(min-width: 769px){
+  .gallery-text{
+    max-width: clamp(220px, 28vw, 320px);
+  }
 }
 
 footer{
@@ -231,6 +273,17 @@ footer{
 
 @media (max-width: 768px){
 
+  .navbar{
+    padding: 0 16px;
+  }
+  .nav-left, .nav-right{
+    gap: 24px;
+  }
+
+  section{
+    padding: 5px 16px;
+  }
+
   .gallery-item{
     flex-direction: column !important;
     text-align: center;
@@ -244,6 +297,17 @@ footer{
 
   .gallery-item img{
     max-width: 90%;
+  }
+
+  footer{
+    flex-wrap: wrap;
+    gap: 12px;
+    text-align: center;
+  }
+
+  footer img{
+    max-width: 160px;
+    height: auto;
   }
 }
 
